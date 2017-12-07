@@ -38,18 +38,11 @@ int main() {
 		exc_t_BS = (double)(endtime - starttime) / CLOCKS_PER_SEC;
 
 		strcpy(arr, arr_s);
-		if (d > 0) {
-			starttime = clock();
-			Rotate_reverse_pos(arr_s, n, d);
-			endtime = clock();
-			exc_t_R = (double)(endtime - starttime) / CLOCKS_PER_SEC;
-		}
-		else {
-			starttime = clock();
-			Rotate_reverse_neg(arr_s, n, d);
-			endtime = clock();
-			exc_t_R = (double)(endtime - starttime) / CLOCKS_PER_SEC;
-		}
+		starttime = clock();
+		Rotate_reverse(arr_s, n, d);
+		endtime = clock();
+		exc_t_R = (double)(endtime - starttime) / CLOCKS_PER_SEC;
+		
 		printf("%d %d %lf %lf %lf %lf", n, d, exc_t_T, exc_t_J, exc_t_BS, exc_t_R);
 	}
 }
